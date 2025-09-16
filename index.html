@@ -14,8 +14,8 @@
         <link rel="stylesheet" href="css/leaflet.photon.css">
         <style>
         #map {
-            width: 1500px;
-            height: 785px;
+            width: 2253px;
+            height: 1145px;
         }
         </style>
         <title>JagdLommisv2 (QFieldCloud)</title>
@@ -40,7 +40,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[47.488029417842895,8.9535228867396],[47.52015189228295,9.04449526677539]]);
+        }).fitBounds([[47.4913680828465,8.96454567347863],[47.51742334793406,9.0405044203464]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -114,28 +114,28 @@
         function pop_HJStaende2025_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td class="visible-with-data" id="nr" colspan="2"><strong>nr</strong><br />' + (feature.properties['nr'] !== null ? autolinker.link(String(feature.properties['nr']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td class="visible-with-data" id="nr" colspan="2"><strong>Standnummer</strong><br />' + (feature.properties['nr'] !== null ? autolinker.link(String(feature.properties['nr']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">hund</th>\
+                        <th scope="row">Hund</th>\
                         <td>' + (feature.properties['hund'] !== null ? autolinker.link(String(feature.properties['hund']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">kommentar</th>\
-                        <td>' + (feature.properties['kommentar'] !== null ? autolinker.link(String(feature.properties['kommentar']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">kugel</th>\
                         <td>' + (feature.properties['kugel'] !== null ? autolinker.link(String(feature.properties['kugel']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['trieb_anwendung'] !== null ? autolinker.link(String(feature.properties['trieb_anwendung']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <td colspan="2">' + (feature.properties['update'] !== null ? autolinker.link(String(feature.properties['update']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['anwendung_kommentar'] !== null ? autolinker.link(String(feature.properties['anwendung_kommentar']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['kommentar_intern'] !== null ? autolinker.link(String(feature.properties['kommentar_intern']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Bemerkung</th>\
+                        <td class="visible-with-data" id="Bemerkung">' + (feature.properties['Bemerkung'] !== null ? autolinker.link(String(feature.properties['Bemerkung']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Triebe_Anwendung'] !== null ? autolinker.link(String(feature.properties['Triebe_Anwendung']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
